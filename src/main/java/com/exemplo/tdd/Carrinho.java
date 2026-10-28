@@ -18,6 +18,12 @@ public class Carrinho {
         return preco;
     }
 
+    public void aplicarCupom(String cupom) {
+        if ("INVALIDO".equals(cupom)) {
+            throw new CupomInvalidoException("Cupom inválido: " + cupom);
+        }
+    }
+
     public double obterTotal() {
         return this.total;
     }
